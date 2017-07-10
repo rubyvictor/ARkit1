@@ -7,19 +7,44 @@
 //
 
 import UIKit
+import ARKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UINavigationControllerDelegate {
+    
+    let sceneView: ARSCNView = {
+      let sv = ARSCNView()
+        sv.backgroundColor = .purple
+        return sv
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let scene = SCNScene()
+        sceneView.scene = scene
+        
+        view.addSubview(sceneView)
+        
+        setupViews()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setupViews() {
+        sceneView.translatesAutoresizingMaskIntoConstraints = false
+        sceneView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        sceneView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        sceneView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        sceneView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -250).isActive = true
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let configuration = ARWorldTrackingSessionConfiguration()
+        sceneView.session.run(configuration)
+        
+        
+    }
+    
 }
 

@@ -12,6 +12,8 @@
 		B190216C1F137E8C00C09922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B190216A1F137E8C00C09922 /* Main.storyboard */; };
 		B190216E1F137E8C00C09922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B190216D1F137E8C00C09922 /* Assets.xcassets */; };
 		B19021711F137E8C00C09922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B190216F1F137E8C00C09922 /* LaunchScreen.storyboard */; };
+		B19021791F1389D100C09922 /* Sunglass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19021781F1389D100C09922 /* Sunglass.swift */; };
+		B190217B1F138B6700C09922 /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B190217A1F138B6700C09922 /* Art.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		B190216D1F137E8C00C09922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B19021701F137E8C00C09922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B19021721F137E8C00C09922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B19021781F1389D100C09922 /* Sunglass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sunglass.swift; sourceTree = "<group>"; };
+		B190217A1F138B6700C09922 /* Art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Art.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,12 @@
 			children = (
 				B19021661F137E8C00C09922 /* AppDelegate.swift */,
 				B19021681F137E8C00C09922 /* ViewController.swift */,
+				B19021781F1389D100C09922 /* Sunglass.swift */,
 				B190216A1F137E8C00C09922 /* Main.storyboard */,
 				B190216D1F137E8C00C09922 /* Assets.xcassets */,
 				B190216F1F137E8C00C09922 /* LaunchScreen.storyboard */,
 				B19021721F137E8C00C09922 /* Info.plist */,
+				B190217A1F138B6700C09922 /* Art.scnassets */,
 			);
 			path = ARKit1;
 			sourceTree = "<group>";
@@ -123,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B19021711F137E8C00C09922 /* LaunchScreen.storyboard in Resources */,
+				B190217B1F138B6700C09922 /* Art.scnassets in Resources */,
 				B190216E1F137E8C00C09922 /* Assets.xcassets in Resources */,
 				B190216C1F137E8C00C09922 /* Main.storyboard in Resources */,
 			);
@@ -136,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B19021691F137E8C00C09922 /* ViewController.swift in Sources */,
+				B19021791F1389D100C09922 /* Sunglass.swift in Sources */,
 				B19021671F137E8C00C09922 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
