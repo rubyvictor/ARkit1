@@ -27,6 +27,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         setupViews()
         
+        addObject()
+        
     }
     
     func setupViews() {
@@ -37,10 +39,28 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         sceneView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -250).isActive = true
     }
     
+    func addObject() {
+        let glasses = Sunglass()
+        glasses.loadModel()
+        
+        let xPos = randomPosition(lowerBound: -1.5, upperBound: 1.5)
+        let yPos = randomPosition(lowerBound: -1.5, upperBound: 1.5)
+        
+        // z position in metres by default?
+        glasses.position = SCNVector3(xPos, yPos, -1)
+        
+        sceneView.scene.rootNode.addChildNode(glasses)
+    }
+    
+    func randomPosition(lowerBound lower: Float, upperBound upper: Float) -> Float {
+        return Float(arc4random()) / Float(UInt32.max) * (lower - upper) + upper
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         let configuration = ARWorldTrackingSessionConfiguration()
+        configuration.planeDetection = .horizontal
         sceneView.session.run(configuration)
         
         
