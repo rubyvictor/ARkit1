@@ -13,7 +13,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     let sceneView: ARSCNView = {
       let sv = ARSCNView()
-        sv.backgroundColor = .purple
+//        sv.backgroundColor = .purple
         return sv
     }()
     
@@ -62,9 +62,25 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         let configuration = ARWorldTrackingSessionConfiguration()
         configuration.planeDetection = .horizontal
         sceneView.session.run(configuration)
-        
-        
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let location = touch.location(in: sceneView)
+            
+            let hitlist = sceneView.hitTest(location, options: nil)
+            if let hitObject = hitlist.first {
+                let node = hitObject.node
+                
+                if node.name == "glasses1.dae" {
+                    node.removeFromParentNode()
+                    addObject()
+                }
+                
+            }
+        }
+    }
+    
     
 }
 
