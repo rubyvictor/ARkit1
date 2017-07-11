@@ -2,18 +2,18 @@
 //  ViewController.swift
 //  ARKit1
 //
-//  Created by Victor Lee on 10/7/17.
+//  Created by Victor Lee on 11/7/17.
 //  Copyright © 2017 VictorLee. All rights reserved.
-//
+
 
 import UIKit
 import ARKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate {
+class ViewController: UIViewController {
     
     let sceneView: ARSCNView = {
-      let sv = ARSCNView()
-//        sv.backgroundColor = .purple
+        let sv = ARSCNView()
+        //        sv.backgroundColor = .purple
         return sv
     }()
     
@@ -83,4 +83,3 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     
 }
-
