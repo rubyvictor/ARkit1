@@ -8,12 +8,13 @@
 
 import UIKit
 import ARKit
+import SceneKit
 
 class ViewController: UIViewController {
     
     let sceneView: ARSCNView = {
         let sv = ARSCNView()
-        //        sv.backgroundColor = .purple
+                sv.backgroundColor = .purple
         return sv
     }()
     
@@ -36,8 +37,11 @@ class ViewController: UIViewController {
         sceneView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         sceneView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         sceneView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        sceneView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -250).isActive = true
+        sceneView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -50).isActive = true
     }
+    
+    
+    
     
     func addObject() {
         let glasses = Sunglass()
@@ -59,7 +63,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let configuration = ARWorldTrackingSessionConfiguration()
+        let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         sceneView.session.run(configuration)
     }
